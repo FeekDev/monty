@@ -18,13 +18,12 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	newNode->n = atoi(token);
-	newNode->next = (*stack);
+	newNode->next = *stack;
 	newNode->prev = NULL;
-
-	if ((*stack) != NULL)
+	if (*stack != NULL)
 		(*stack)->prev = newNode;
 
-	(*stack) = newNode;
+	*stack = newNode;
 }
 
 /**
@@ -40,7 +39,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || stack == NULL)
 		return;
 
-	top = (*stack);
+	top = *stack;
 	while (top)
 	{
 		printf("%d\n", top->n);
@@ -56,8 +55,10 @@ void pall(stack_t **stack, unsigned int line_number)
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	if ((*stack) == NULL)
+	if (*stack == NULL || stack == NULL)
+	{
 		fprintf(stderr, "L%d: can't pint, stack empty", line_number);
-
+		exit(EXIT_FAILURE);
+	}
 	printf("%d\n", (*stack)->n);
 }
