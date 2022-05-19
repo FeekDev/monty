@@ -8,7 +8,7 @@
  * Return: 1 if is int 0 otherwise
  */
 
-int IsNumb(char *s)
+int isNumb(char *s)
 {
 	int i;
 

@@ -19,7 +19,6 @@ int main(int argc, char **argv)
 	{
 		fprintf(stderr, "Usage: monty file\n");
 		exit(EXIT_FAILURE); }
-
 	fptr = fopen(argv[1], "r");
 	if (fptr == NULL)
 	{
@@ -35,17 +34,18 @@ int main(int argc, char **argv)
 		if (strcmp(token, "push") == 0)
 		{
 			token = strtok(NULL, " \n\t");
-			if (token == NULL || IsNumb(token) == 0)
+			if (token == NULL || isNumb(token) == 0)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", line_number);
-				exit(EXIT_FAILURE); }
+				exit(EXIT_FAILURE);
+			}
 			push(&stack, line_number); }
 		else
 		{
-			pick_func(&stack, line_number); }
+			pick_func(&stack, line_number);
+		}
 		line_number++; }
 	free_stack(stack);
 	free(line);
 	fclose(fptr);
-	return (0);
-}
+	return (0); }

@@ -5,6 +5,7 @@
  *
  * @stack: the double pinter to struct
  * @line_number: the line read in the file wih sufix '.m'
+ * Return: void
  */
 
 void push(stack_t **stack, unsigned int line_number)
@@ -16,13 +17,13 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't malloc\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	newNode->n = atoi(token);
 	newNode->next = *stack;
 	newNode->prev = NULL;
 	if (*stack != NULL)
+	{
 		(*stack)->prev = newNode;
-
+	}
 	*stack = newNode;
 }
 
@@ -35,12 +36,13 @@ void push(stack_t **stack, unsigned int line_number)
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
+
 	(void)line_number;
 	if (*stack == NULL || stack == NULL)
 		return;
 
 	top = *stack;
-	while (top)
+	while (top != NULL)
 	{
 		printf("%d\n", top->n);
 		top = top->next;

@@ -50,6 +50,6 @@ void pint(stack_t **stack, unsigned int line_number);
 
 void free_stack(stack_t *stack);
 void pick_func(stack_t **stack, unsigned int line_number);
-int IsNumb(char *s);
+int isNumb(char *s);
 
 #endif /* _MONTY_H*/

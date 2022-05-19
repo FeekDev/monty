@@ -2,8 +2,8 @@
 
 /**
  * free_stack - this function freedom the stack
- *
  * @top: the pointer
+ * Return: void
  */
 
 void free_stack(stack_t *top)
