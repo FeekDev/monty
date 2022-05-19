@@ -65,6 +65,14 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
+/**
+ * pop - removes the top element of the stack
+ *
+ *
+ * @stack: the double pointer
+ * @line_number: read line
+ */
+
 void pop(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
