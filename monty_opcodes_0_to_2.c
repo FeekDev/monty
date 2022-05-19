@@ -64,3 +64,30 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", (*stack)->n);
 }
+
+void pop(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L%u: can't pop an empty stack\n", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		stack_t *del = NULL;
+
+		del = *stack;
+		if ((*stack)->next == NULL)
+		{
+			*stack = NULL;
+			free(del);
+		}
+		else
+		{
+			*stack = (*stack)->next;
+			(*stack)->prev = NULL;
+			free(del);
+		}
+	}
+}
