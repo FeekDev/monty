@@ -2,12 +2,12 @@
 char *token = NULL;
 
 /**
- * main - this function open files and tokenizer
- *
- * @argc: count comand line
- * @argv: passed the pathfile sufix .m
- * Return: int
+ * main - entry into interpreter
+ * @argc: argc counter
+ * @argv: arguments
+ * Return: 0 on success
  */
+
 int main(int argc, char **argv)
 {
 	FILE *fptr;
@@ -33,8 +33,7 @@ int main(int argc, char **argv)
 		if (token == NULL)
 		{
 			line_number++;
-			continue;
-		}
+			continue; }
 		if (strcmp(token, "push") == 0)
 		{
 			token = strtok(NULL, " \n\t");
