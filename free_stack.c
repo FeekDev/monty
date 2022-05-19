@@ -1,21 +1,21 @@
 #include "monty.h"
 
 /**
- * free_stack - freedom the stack
+ * free_stack - this function freedom the stack
  *
- * @stack: pointer to nodes
+ * @top: the pointer
  */
 
-void free_stack(stack_t *stack)
+void free_stack(stack_t *top)
 {
-	stack_t *current, *temp;
+	if (top == NULL)
+		return;
 
-	current = stack;
-
-	while (current != NULL)
+	while (top)
 	{
-		temp = current->next;
-		free(current);
-		current = temp;
+		stack_t *next = top->next;
+
+		free(top);
+		top = next;
 	}
 }

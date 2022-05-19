@@ -7,7 +7,6 @@ char *token = NULL;
  * @argv: arguments
  * Return: 0 on success
  */
-
 int main(int argc, char **argv)
 {
 	FILE *fptr;
@@ -19,8 +18,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+		exit(EXIT_FAILURE); }
 
 	fptr = fopen(argv[1], "r");
 	if (fptr == NULL)
@@ -40,13 +38,11 @@ int main(int argc, char **argv)
 			if (token == NULL || IsNumb(token) == 0)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", line_number);
-				exit(EXIT_FAILURE);
-			}
+				exit(EXIT_FAILURE); }
 			push(&stack, line_number); }
 		else
 		{
-			pick_func(&stack, line_number);
-		}
+			pick_func(&stack, line_number); }
 		line_number++; }
 	free_stack(stack);
 	free(line);
