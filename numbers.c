@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 /**
- * IsNumb - check if is a number or not
+ * isNumb - check if is a number or not
  *
  * @s: passed the argument
  * Return: 1 if is int 0 otherwise
