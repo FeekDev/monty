@@ -1,5 +1,7 @@
 #include "monty.h"
 
+char *token = NULL;
+
 /**
  * main - entry into interpreter
  * @argc: argc counter
@@ -10,7 +12,7 @@
 int main(int argc, char **argv)
 {
 	FILE *fptr;
-	char *line, *token = NULL, NULL;
+	char *line = NULL;
 	size_t len = 0;
 	stack_t *stack = NULL;
 	int line_number = 1;
@@ -24,16 +26,14 @@ int main(int argc, char **argv)
 	if (fptr == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+		exit(EXIT_FAILURE); }
 	while (getline(&line, &len, fptr) != -1)
 	{
 		token = strtok(line, " \n\t");
 		if (token == NULL)
 		{
 			line_number++;
-			continue;
-		}
+			continue; }
 		if (strcmp(token, "push") == 0)
 		{
 			token = strtok(NULL, " \n\t");
