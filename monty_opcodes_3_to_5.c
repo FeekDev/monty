@@ -32,6 +32,27 @@ void swap(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * add - adds the top two elements of the stack
+ *
+ * @stack: the double pointer
+ * @stack: the double pointer
+ */
+
+void add(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		printf("L%u: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack)->next->n += (*stack)->n;
+	(*stack) = (*stack)->next;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
+}
+
+/**
  * nop - doesn’t do anything
  *
  * @stack: the double pointer
