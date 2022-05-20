@@ -5,7 +5,6 @@ pall
 pop
 pall
 pop
-nop
 pall
 pop
 pall

@@ -35,7 +35,7 @@ void swap(stack_t **stack, unsigned int line_number)
  * add - adds the top two elements of the stack
  *
  * @stack: the double pointer
- * @stack: the double pointer
+ * @line_number: line read
  */
 
 void add(stack_t **stack, unsigned int line_number)
@@ -63,6 +63,4 @@ void nop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
 	(void) line_number;
-
-	return;
 }
