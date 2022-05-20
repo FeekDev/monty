@@ -24,7 +24,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o monty
 ```
 * Run the program
 ```bash
-$  ./monty bytecodes/bytecode_file.m
+$ ./monty bytecodes/bytecode_file.m
 ```
 
 ## Opcodes
