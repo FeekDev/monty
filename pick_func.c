@@ -30,6 +30,6 @@ void pick_func(stack_t **stack, unsigned int line_number)
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instrnuction %s\n", line_number, token);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }
